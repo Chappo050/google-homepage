@@ -2,33 +2,103 @@
 .container{
     display: grid;
     background: white;
-    padding-top: 15%;
-    padding-bottom: 15%;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:  1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows:   1fr 1fr 1fr 1fr;
     grid-gap: 1px;
     grid-template-areas: 
+    "header header header"
     ". logo ."
     ". search ."
-    ". buttons .";
+    "footer footer footer";
 }
 
 .searchBox{
     grid-area: search;
-    justify-self: center;
+    margin: auto;
+}
+
+.searchBox input{
+    padding-right: 150px;
+    padding-bottom: 10px;
 }
 
 .logo{
     grid-area: logo;
+    padding-top: 10%;
     justify-self: center;
+    
 }
 
 .buttons{
-    grid-area: buttons;
-    padding-top: 18px;
+    grid-area: search;
+    position:relative;
+    top: 20px;
+    left: 230px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
+.navBar{  
+    grid-area: header;
+}
+
+.navBar a{  
+    width: 60px;
+    color:inherit;
+    text-decoration: none; /* no underline */
+    justify-self: center;
+}
+
+.navBar li{
+    display: inline;
+    padding-right: 10px;
+    
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+.footer{  
+    grid-area: footer;
+    background-color: #f2f2f2;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 10px;
+    font-size: 14;
+
+}
+
+.footer a{  
+    width: 60px;
+    color:inherit;
+    text-decoration: none; /* no underline */
+    justify-self: center;
+}
+
+.footer li{
+    display: inline;
+    padding-right: 10px;
+}
+
+#SignIn {
+    background: #4285f4;
+    border: 1px solid;
+    outline: none;
+    display: inline-block;
+    line-height: 28px;
+    padding: 1 12px;
+    border-radius: 2px;
+    color: white;
+   
+}
+
+
 </style>
+
 
 
 
@@ -40,6 +110,19 @@
     </head>
 
     <div class="container">
+        <div  class="navBar">
+            <ul>
+                <li style="float:left"><a href="about">About</a></li>
+                <li style="float:left"><a href="Store">Store</a></li>
+                <li style="float:right" id="SignIn"><a href="Sing-in">Sign in</a></li>
+                <li style="float:right"> <a href="BlockThing">Square</a></li>
+                <li style="float:right"><a href="Images">Images</a></li>
+                <li style="float:right" ><a href="Gmail">Gmail</a></li>
+                
+            </ul>
+        </div>
+
+
         <div class="logo">  
             <img src="GoogleLogo.png" alt="Gogoles Logo"> 
         </div>
@@ -48,14 +131,26 @@
          <div class="searchBox">
 
              <form action="" >
-                <input type="Search">
+                <input type="Search" style="border-radius: 20px;">
                 <div class="buttons">
-                    <button type="submit">Google Search</button>
-                    <button type="submit">I'm Feeling Lucky</button>
+                    <button type="submit" style="background-color: #f8f8f8;">Google Search</button>
+                    <button type="submit" style="background-color: #f8f8f8;">I'm Feeling Lucky</button>
                 </div>
                 
             </form>
 
          </div>
+
+         <div  class="footer">
+            <ul>
+                <li style="float:left"><a href="about">Advertising</a></li>
+                <li style="float:left"><a href="Store">Busniness</a></li>
+                <li style="float:left"><a href="Sing-in">How Search works</a></li>
+                <li style="float:right"> <a href="BlockThing">Settings</a></li>
+                <li style="float:right"><a href="Images">Terms</a></li>
+                <li style="float:right" ><a href="Gmail">Privacy</a></li>
+                
+            </ul>
+        </div>
     </div>
 </html>
